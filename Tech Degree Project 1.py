@@ -19,8 +19,7 @@ def start_game():
             exit()
 
     attempts = 1
-    
-	num = random.randint(1, 10)
+    num = random.randint(1, 10)
 
     print("\nGood luck, {}!".format(name))
 
