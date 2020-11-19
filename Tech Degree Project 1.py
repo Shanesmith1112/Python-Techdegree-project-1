@@ -37,8 +37,7 @@ def start_game():
                     guess = int(input("\nTry Again!\nThe number is going to be lower! "))
                     attempts += 1
             	elif guess < 1 or guess > 10:
-                    guess = int(input("\nERROR!\nThe number is between 1 and 10!\nThe number you guessed was not a valid number! "))
-		
+                    guess = int(input("\nERROR!\nThe number is between 1 and 10!\nThe number you guessed was not a valid number! "))		
 	if attempts > 1:
             print("Well Done!!\nIt only took you {} attempts to guess correctly!".format(attempts))
         else:
