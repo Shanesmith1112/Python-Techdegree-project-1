@@ -15,7 +15,7 @@ def start_game():
             start_game()
             answer
         else:
-            print("\nYour best score was {}! Try to beat it next time!".format(min(highscore)))
+            print("\nThank you for playing {}!".format(name))
             exit()
 
     attempts = 1
@@ -42,7 +42,8 @@ def start_game():
                     guess = int(input("\nERROR!\nThe number is between 1 and 10!\nThe number you guessed was not a valid number! "))
 			  
         if attempts > 1:
-                print("Well Done!!\nIt only took you {} attempts to guess correctly!".format(attempts))
+            print("Well Done!!\nIt only took you {} attempts to guess correctly!".format(attempts))
+			play_again()
             
         else:
             print("\nYou got LUCKY, you guessed it on the first try!")
