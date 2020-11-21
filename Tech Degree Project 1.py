@@ -1,7 +1,7 @@
 import random
 
 
-print("-----------------------------------\n Welcome to the Number Guessing Game! \n-----------------------------------")
+print("----------------------------------\n Welcome to the Number Guessing Game! \n----------------------------------")
 
 name = input("\nWhat is your name?  ")
 
@@ -19,9 +19,7 @@ def start_game():
             print("\nThank you for playing your best score was {}!".format(min(highscore)))
             exit()
 
-
     attempts = 0
-
     num = random.randint(1, 10)
 
     print("\nGood luck, {}!\nI'm thinking of a number between 1 and 10. Can you guess it?".format(name))
