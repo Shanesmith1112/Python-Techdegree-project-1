@@ -16,7 +16,7 @@ def start_game():
             print("\nYour current high score is {}!".format(min(highscore)))
             start_game()
         else:
-            print("\nThank you for playing {}!".format(name))
+            print("\nThank you for playing your best score was {}!".format(min(highscore)))
             exit()
 
     attempts = 0
@@ -29,14 +29,14 @@ def start_game():
             guess = int(input("\nChoose a number between 1 and 10. "))
             attempts += 1
             while guess != num:
-                if guess < num:
+                if guess < 1 or guess > 10:
+                    guess = int(input("\nERROR!\nPlease enter a number between 1 and 10 "))
+                elif guess < num:
                     guess = int(input("\nTry Again!\nThe number is higher! "))
                     attempts += 1
                 elif guess > num:
                     guess = int(input("\nTry Again!\nThe number is lower! "))
                     attempts += 1
-                elif guess < 1 or guess > 10:
-                    guess = int(input("\nERROR!\nThe number is between 1 and 10!\nThe number you guessed was not a valid number! "))
         except ValueError:
             print("\nERROR!\nPlease enter a valid number... ")
             continue
@@ -51,8 +51,5 @@ def start_game():
             highscore.append(attempts)
             play_again()
             
-       
-       
-
 
 start_game()
