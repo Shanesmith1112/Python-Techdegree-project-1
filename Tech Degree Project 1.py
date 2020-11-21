@@ -19,7 +19,7 @@ def start_game():
             print("\nThank you for playing {}!".format(name))
             exit()
 
-    attempts = 1
+    attempts = 0
     num = random.randint(1, 10)
 
     print("\nGood luck, {}!\nI'm thinking of a number between 1 and 10. Can you guess it?".format(name))
@@ -27,6 +27,7 @@ def start_game():
     while True:
         try:    
             guess = int(input("\nChoose a number between 1 and 10. "))
+            attempts += 1
             while guess != num:
                 if guess < num:
                     guess = int(input("\nTry Again!\nThe number is higher! "))
@@ -38,7 +39,6 @@ def start_game():
                     guess = int(input("\nERROR!\nThe number is between 1 and 10!\nThe number you guessed was not a valid number! "))
         except ValueError:
             print("\nERROR!\nPlease enter a valid number... ")
-            attempts += 1
             continue
 
         if attempts > 1 and guess == num:
