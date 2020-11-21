@@ -22,7 +22,7 @@ def start_game():
     attempts = 1
     num = random.randint(1, 10)
 
-    print("\nI'm thinking of a number between 1 and 10. Can you guess it?\nGood luck, {}!".format(name))
+    print("\nGood luck, {}!\nI'm thinking of a number between 1 and 10. Can you guess it?".format(name))
 
     while True:
         try:    
