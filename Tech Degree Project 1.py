@@ -40,8 +40,8 @@ def start_game():
             print("\nERROR!\nPlease enter a valid number... ")
             attempts += 1
             continue
-        
-       if attempts > 1 and guess == num:
+
+        if attempts > 1 and guess == num:
             print("Well Done!!\nIt only took you {} attempts to guess correctly!".format(attempts))
             highscore.append(attempts)
             play_again()
