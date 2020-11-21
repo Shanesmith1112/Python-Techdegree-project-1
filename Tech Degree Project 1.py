@@ -25,7 +25,7 @@ def start_game():
     print("\nGood luck, {}!\nI'm thinking of a number between 1 and 10. Can you guess it?".format(name))
 
     while True:
-        try:    
+        try:
             guess = int(input("\nChoose a number between 1 and 10. "))
             attempts += 1
             while guess != num:
@@ -50,6 +50,6 @@ def start_game():
             print("\nYou got LUCKY, you guessed it on the first try!")
             highscore.append(attempts)
             play_again()
-            
+
 
 start_game()
