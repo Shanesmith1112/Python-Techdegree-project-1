@@ -15,7 +15,6 @@ def start_game():
         if answer == "yes" or answer == "y":
             print("\nYour current high score is {}!".format(min(highscore)))
             start_game()
-
         else:
             print("\nThank you for playing {}!".format(name))
             exit()
@@ -23,38 +22,38 @@ def start_game():
     attempts = 1
     num = random.randint(1, 10)
 
-    print("\nGood luck, {}!".format(name))
+    print("\nI'm thinking of a number between 1 and 10. Can you guess it?\nGood luck, {}!".format(name))
 
     while True:
-        try:
-            guess = int(input("\nI'm thinking of a number between 1 and 10. Can you guess it? "))
-        except ValueError:
-            print("\nERROR!\nPlease enter a number! ")
-        except TypeError:
-            print("\nERROR!\nPlease enter a number! ")
-
-        else:
+        try:    
+            guess = int(input("\nChoose a number between 1 and 10. "))
             while guess != num:
                 if guess < num:
                     guess = int(input("\nTry Again!\nThe number is higher! "))
                     attempts += 1
-
                 elif guess > num:
                     guess = int(input("\nTry Again!\nThe number is lower! "))
                     attempts += 1
-
                 elif guess < 1 or guess > 10:
-                    guess = int(input(
-                        "\nERROR!\nThe number is between 1 and 10!\nThe number you guessed was not a valid number! "))
-
-        if attempts > 1:
+                    guess = int(input("\nERROR!\nThe number is between 1 and 10!\nThe number you guessed was not a valid number! "))
+        except ValueError:
+            print("\nERROR!\nPlease enter a valid number... ")
+            attempts += 1
+            continue
+        
+            
+        if attempts > 1 and guess == num:
             print("Well Done!!\nIt only took you {} attempts to guess correctly!".format(attempts))
+            highscore.append(attempts)
             play_again()
 
-        else:
+        elif guess == num:
             print("\nYou got LUCKY, you guessed it on the first try!")
             highscore.append(attempts)
             play_again()
+            
+       
+       
 
 
 start_game()

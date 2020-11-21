@@ -38,10 +38,11 @@ def start_game():
                     guess = int(input("\nERROR!\nThe number is between 1 and 10!\nThe number you guessed was not a valid number! "))
         except ValueError:
             print("\nERROR!\nPlease enter a valid number... ")
+            attempts += 1
             continue
         
             
-        if attempts > 1:
+        if attempts > 1 and guess == num:
             print("Well Done!!\nIt only took you {} attempts to guess correctly!".format(attempts))
             highscore.append(attempts)
             play_again()
